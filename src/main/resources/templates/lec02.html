@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/schema/security">
+
+<head>
+  <meta charset="utf-8">
+  <title>lec02</title>
+</head>
+
+<body>
+  <h3>Lec02 GET!</h3>
+  <p th:if="${name}">
+    Hi [[${name}]]
+  </p>
+</body>
+
+</html>
