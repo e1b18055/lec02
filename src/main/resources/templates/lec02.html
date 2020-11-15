@@ -7,10 +7,33 @@
 </head>
 
 <body>
+  <script th:inline="javascript" th:if=${janken}>
+    window.onload = function () {
+      var janken = [[${ janken }]];
+      var result_txt = "";
+      result_txt = "あなたの手 " + janken.hand + "<br>相手の手 " + janken.enemyHand + "<br>結果 " + janken.result;
+      document.getElementById("result").innerHTML = result_txt;
+      console.log(janken);
+    }
+  </script>
   <h3>Lec02 GET!</h3>
   <p th:if="${name}">
     Hi [[${name}]]
   </p>
+
+  <p>
+  <div>
+    <a href="/lec02/janken?hand=Gu">グー</a>　
+    <a href="/lec02/janken?hand=Tyoki">チョキ</a>　
+    <a href="/lec02/janken?hand=Pa">パー</a>
+  </div>
+  </p>
+
+  <div th:if="${janken}">
+    <span id="result">
+
+    </span>
+  </div>
 </body>
 
 </html>
