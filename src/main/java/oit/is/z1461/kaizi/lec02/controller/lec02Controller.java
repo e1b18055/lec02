@@ -1,5 +1,7 @@
 package oit.is.z1461.kaizi.lec02.controller;
 
+import java.security.Principal;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +16,13 @@ import oit.is.z1461.kaizi.lec02.model.Janken;
 public class Lec02Controller {
 
   /**
+   * @param model
+   * @param prin
    * @return
    */
-  @PostMapping()
-  public String lec02(@RequestParam String username, ModelMap model) {
+  @GetMapping()
+  public String lec02(ModelMap model, Principal prin) {
+    String username = prin.getName();
     model.addAttribute("name", username);
     return "lec02.html";
   }
