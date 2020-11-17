@@ -16,8 +16,19 @@
       console.log(janken);
     }
   </script>
-  <a href="/logout">ログアウト</a>
-  <h3>Hi [[${name}]]!</h3>
+  <div><a href="/logout">ログアウト</a></div>
+  <h1>Lec02 GET!</h1>
+
+  <div th:if="${entry}">
+    エントリー
+    <ul>
+      <li th:each="user : ${entry.users}"> [[${user}]]</li>
+    </ul>
+  </div>
+
+  <div th:if="${name}">
+    Hi [[${name}]]!
+  </div>
 
   <p>
   <div>
